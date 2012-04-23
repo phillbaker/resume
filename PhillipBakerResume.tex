@@ -5,34 +5,32 @@
 % (c) 2008 Nathaniel Johnston <nathaniel@nathanieljohnston.com> http://www.nathanieljohnston.com
 
 % (c) 2011 Scott Clark <sc932@cornell.edu> http://cam.cornell.edu/~sc932
-%
+% (c) 2012 Phillip Baker <pbaker@retrodict.com> https://phillbaker.com
 
 %This work is licensed under the Creative Commons Attribution-Noncommercial-Share Alike 2.5 License. To view a copy of this license, visit http://creativecommons.org/licenses/by-nc-sa/2.5/ or send a letter to Creative Commons, 543 Howard Street, 5th Floor, San Francisco, California, 94105, USA.
 
-\documentclass[letterpaper,11pt]{article}
-
+\documentclass[letterpaper,1opt]{article}
 \newlength{\outerbordwidth}
-
 \pagestyle{empty}
-
 \raggedbottom
-
 \raggedright
-
 \usepackage[svgnames]{xcolor}
-
 \usepackage{framed}
-
 \usepackage{tocloft}
+\usepackage{fullpage}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{mathtools}
+\usepackage{graphicx}
+\usepackage{url}
+\usepackage{soul}
+\usepackage{adjustbox}
+\usepackage{collectbox}
 
 %-----------------------------------------------------------
 
-%Edit these values as you see fit
-
 \setlength{\outerbordwidth}{3pt}  % Width of border outside of title bars
-
 \definecolor{shadecolor}{gray}{0.75}  % Outer background color of title bars (0 = black, 1 = white)
-
 \definecolor{shadecolorB}{gray}{0.93}  % Inner background color of title bars
 
 %-----------------------------------------------------------
@@ -40,27 +38,16 @@
 %Margin setup
 
 \setlength{\evensidemargin}{-0.25in}
-
 \setlength{\headheight}{-0.25in}
-
 \setlength{\headsep}{0in}
-
 \setlength{\oddsidemargin}{-0.25in}
-
 \setlength{\paperheight}{11in}
-
 \setlength{\paperwidth}{8.5in}
-
 \setlength{\tabcolsep}{0in}
-
 \setlength{\textheight}{9.75in}
-
 \setlength{\textwidth}{7in}
-
 \setlength{\topmargin}{-0.3in}
-
 \setlength{\topskip}{0in}
-
 \setlength{\voffset}{0.1in}
 
 %-----------------------------------------------------------
@@ -70,226 +57,213 @@
 \newcommand{\resitem}[1]{\item #1 \vspace{-2pt}}
 
 \newcommand{\resheading}[1]{\vspace{8pt}
-
   \parbox{\textwidth}{\setlength{\FrameSep}{\outerbordwidth}
-
     \begin{shaded}
-
 \setlength{\fboxsep}{0pt}\framebox[\textwidth][l]{\setlength{\fboxsep}{4pt}\fcolorbox{shadecolorB}{shadecolorB}{\textbf{\sffamily{\mbox{~}\makebox[6.762in][l]{\large #1} \vphantom{p\^{E}}}}}}
-
     \end{shaded}
-
   }\vspace{-5pt}
-
 }
 
 \newcommand{\ressubheading}[4]{
-
 \begin{tabular*}{6.5in}{l@{\cftdotfill{\cftsecdotsep}\extracolsep{\fill}}r}
-
 		\textbf{#1} & #2 \\
-
 		\textit{#3} & \textit{#4} \\
-
 \end{tabular*}\vspace{-6pt}}
 
 %-----------------------------------------------------------
 
 \begin{document}
 
-\begin{tabular*}{7in}{l@{\extracolsep{\fill}}r}
+	%\begin{adjustbox}{width=\textwidth,totalheight=\textheight,keepaspectratio}
+		\begin{tabular*}{7in}{l@{\extracolsep{\fill}}r}
+			\textbf{\Large Phillip Baker} 								& \textbf{\today} 			\\
+			Graduate Student, University of Pennsylvania 	& pbaker@retrodict.com 	\\
+			Philadelphia, PA 															& phillbaker.com 				\\
+		\end{tabular*}
 
-\textbf{\Large Scott Clark} & \textbf{\today} \\
+		%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-Graduate Student, DOE Computational Science Graduate Fellow & sc932@cornell.edu \\
+		\resheading{Education}
 
-657 Rhodes Hall, Ithaca, NY, 14853 & cam.cornell.edu/$\sim$sc932 \\
+		%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\end{tabular*}
+		\begin{itemize}
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+		\item
 
-\resheading{Education}
+			\ressubheading{Cornell University}{Ithaca, NY}{Ph.D. Applied Math (current), M.S. Computer Science}{2008 - 2012(projected)}
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+			\begin{itemize}
 
-\begin{itemize}
+				\resitem{Department of Energy Computational Science Graduate Fellow (Full Scholarship, 4 years)}
 
-\item
+				\resitem{Emphasis on machine learning/data mining and algorithm design/software development related to bioinformatics and optimization}
 
-	\ressubheading{Cornell University}{Ithaca, NY}{Ph.D. Applied Math (current), M.S. Computer Science}{2008 - 2012(projected)}
+			\end{itemize}
 
-	\begin{itemize}
+		\item
 
-		\resitem{Department of Energy Computational Science Graduate Fellow (Full Scholarship, 4 years)}
+			\ressubheading{Oregon State University}{Corvallis, OR}{B.Sc. Mathematics, B.Sc. Computational Physics, B.Sc. Physics}{2004 - 2008}
 
-		\resitem{Emphasis on machine learning/data mining and algorithm design/software development related to bioinformatics and optimization}
+			\begin{itemize}
 
-	\end{itemize}
+				\resitem{Graduated Magna Cum Laude with minors in Actuarial Sciences and Mathematical Sciences}
 
-\item
+				\resitem{Strong emphasis on scientific computing, numerical analysis and software development}
 
-	\ressubheading{Oregon State University}{Corvallis, OR}{B.Sc. Mathematics, B.Sc. Computational Physics, B.Sc. Physics}{2004 - 2008}
+			\end{itemize}
 
-	\begin{itemize}
+		\end{itemize}
 
-		\resitem{Graduated Magna Cum Laude with minors in Actuarial Sciences and Mathematical Sciences}
+		%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-		\resitem{Strong emphasis on scientific computing, numerical analysis and software development}
+		\resheading{Skills}
 
-	\end{itemize}
+		%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\end{itemize}
+		\begin{itemize}
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+		\item {\bf Development:} C/C++, Python, CUDA, JavaScript, Ruby (Rails), Java, FORTRAN, MATLAB
 
-\resheading{Skills}
+		\item {\bf Numerical Analysis:} Optimization, Linear Algebra, ODEs, PDEs, Monte Carlo, Computational Physics, Complex Systems, Iterative Methods, Tomology
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+		\item {\bf Computer Science:} Machine Learning, Data Mining, Parallel Programming, Data Structures, Artificial Intelligence, Operating Systems
 
-\begin{itemize}
+		\item Discovering and implementing new ideas. Give me an API and a problem and I will figure it out.
 
-\item {\bf Development:} C/C++, Python, CUDA, JavaScript, Ruby (Rails), Java, FORTRAN, MATLAB
+		\item Diverse background in Math, Computer Science, Physics and Biology allows me to communicate to a wide scientific and general audience and begin contributing to any group immediately.
 
-\item {\bf Numerical Analysis:} Optimization, Linear Algebra, ODEs, PDEs, Monte Carlo, Computational Physics, Complex Systems, Iterative Methods, Tomology
+		\item I have worked in many places in a myriad of fields. I can readily learn and adapt to a new discipline, area or environment and start pushing real results quickly.
 
-\item {\bf Computer Science:} Machine Learning, Data Mining, Parallel Programming, Data Structures, Artificial Intelligence, Operating Systems
+		\end{itemize}
 
-\item Discovering and implementing new ideas. Give me an API and a problem and I will figure it out.
+		%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\item Diverse background in Math, Computer Science, Physics and Biology allows me to communicate to a wide scientific and general audience and begin contributing to any group immediately.
+		\resheading{Research and Work Experience}
 
-\item I have worked in many places in a myriad of fields. I can readily learn and adapt to a new discipline, area or environment and start pushing real results quickly.
+		%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\end{itemize}
+		\begin{itemize}
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+		\item
 
-\resheading{Research and Work Experience}
+			\ressubheading{Bloomberg LP}{New York, NY}{Financial Software Development Intern}{Summer 2011}
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+			\begin{itemize}
 
-\begin{itemize}
+				\resitem{Developed end-to-end reporting software in \texttt{C++} and \texttt{javascript}}
 
-\item
+		    \resitem{Implemented statistical models to perform forward and backward portfolio analysis}
 
-	\ressubheading{Bloomberg LP}{New York, NY}{Financial Software Development Intern}{Summer 2011}
+			\end{itemize}
 
-	\begin{itemize}
+		\item
 
-		\resitem{Developed end-to-end reporting software in \texttt{C++} and \texttt{javascript}}
+			\ressubheading{DOE Joint Genome Institute (Lawrence Berkeley National Lab)}{Walnut Creek, CA}{Researcher in Analysis Group under Dr. Zhong Wang}{Summer 2010}
 
-    \resitem{Implemented statistical models to perform forward and backward portfolio analysis}
+			\begin{itemize}
 
-	\end{itemize}
+				\resitem{Created \textbf{open source} genome validation software tool in \texttt{python} and \texttt{C}}
 
-\item
+		    \resitem{Used machine learning to mine TBs of genome data efficiently using novel likelihood function}
 
-	\ressubheading{DOE Joint Genome Institute (Lawrence Berkeley National Lab)}{Walnut Creek, CA}{Researcher in Analysis Group under Dr. Zhong Wang}{Summer 2010}
+			\end{itemize}
 
-	\begin{itemize}
+		\item 
 
-		\resitem{Created \textbf{open source} genome validation software tool in \texttt{python} and \texttt{C}}
+			\ressubheading{Los Alamos National Laboratory}{Los Alamos, NM}{Researcher in Metagenomics Group under Dr. Nick Hengartner}{Summer 2009}
 
-    \resitem{Used machine learning to mine TBs of genome data efficiently using novel likelihood function}
+			\begin{itemize}
 
-	\end{itemize}
+				\resitem{Wrote \textbf{open source} alignment algorithm software tool in \texttt{python}, \texttt{C} and \texttt{CUDA}}
 
-\item 
+		    \resitem{Used statistical models to discover sequence alignments using parallel algorithms on GPUs}
 
-	\ressubheading{Los Alamos National Laboratory}{Los Alamos, NM}{Researcher in Metagenomics Group under Dr. Nick Hengartner}{Summer 2009}
+			\end{itemize}
 
-	\begin{itemize}
+		\item
 
-		\resitem{Wrote \textbf{open source} alignment algorithm software tool in \texttt{python}, \texttt{C} and \texttt{CUDA}}
+			\ressubheading{Oregon State University}{Corvallis, OR}{Research Assistant under Prof. Malgorzata Peszynska and Prof. Rubin Landau}{2005-2008}
 
-    \resitem{Used statistical models to discover sequence alignments using parallel algorithms on GPUs}
+			\begin{itemize}
 
-	\end{itemize}
+				\resitem{Finite element analysis with uncertainty and web-based teaching in \texttt{Java}}
 
-\item
+			\end{itemize}
 
-	\ressubheading{Oregon State University}{Corvallis, OR}{Research Assistant under Prof. Malgorzata Peszynska and Prof. Rubin Landau}{2005-2008}
+		\item
 
-	\begin{itemize}
+			\ressubheading{Max Plank Institute for the Physics of Complex Systems}{Dresden, Germany}{NSF REU Research Assistant under Prof. Steven Tomsovic}{Summer 2007}
 
-		\resitem{Finite element analysis with uncertainty and web-based teaching in \texttt{Java}}
+			\begin{itemize}
 
-	\end{itemize}
+				\resitem{Research on extreme value statistics in \texttt{MATLAB} and \texttt{FORTRAN}}
 
-\item
+			\end{itemize}
 
-	\ressubheading{Max Plank Institute for the Physics of Complex Systems}{Dresden, Germany}{NSF REU Research Assistant under Prof. Steven Tomsovic}{Summer 2007}
+		\item
 
-	\begin{itemize}
+			\ressubheading{University of California: Davis}{Davis, CA}{NSF REU Research Assistant under Prof. Daniel Cox}{Summer 2006}
 
-		\resitem{Research on extreme value statistics in \texttt{MATLAB} and \texttt{FORTRAN}}
+			\begin{itemize}
 
-	\end{itemize}
+				\resitem{Computational biophysics research as applied to protein folding in \texttt{Java}}
 
-\item
+			\end{itemize}
 
-	\ressubheading{University of California: Davis}{Davis, CA}{NSF REU Research Assistant under Prof. Daniel Cox}{Summer 2006}
+		\end{itemize}
 
-	\begin{itemize}
+		%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-		\resitem{Computational biophysics research as applied to protein folding in \texttt{Java}}
+		\resheading{Selected Open Source Projects and Publications {\mdseries(github.com/sc932)}}
 
-	\end{itemize}
+		%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\end{itemize}
+		\begin{itemize}
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+		\item \ressubheading{ALE: Assembly Likelihood Estimator}{C, Python}{Probabalistic evaluation of genome assemblies}{2010 - Current}
 
-\resheading{Selected Open Source Projects and Publications {\mdseries(github.com/sc932)}}
+		  \begin{itemize}
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+		    \resitem{Uses statistical likelihood function to score and rank genome assemblies}
 
-\begin{itemize}
+				\resitem{Publication being prepared for Genome Research}
 
-\item \ressubheading{ALE: Assembly Likelihood Estimator}{C, Python}{Probabalistic evaluation of genome assemblies}{2010 - Current}
+		    \resitem{Presented at several conferences including SIAM Scientific Computing}
 
-  \begin{itemize}
+			\end{itemize}
 
-    \resitem{Uses statistical likelihood function to score and rank genome assemblies}
+		\item \ressubheading{Velvetrope}{Python, C, CUDA}{A parallel statistical algorithm for finding homologous regions within sequences}{2009 - 2010}
 
-		\resitem{Publication being prepared for Genome Research}
+		  \begin{itemize}
 
-    \resitem{Presented at several conferences including SIAM Scientific Computing}
+				\resitem{Profiled in DEIXIS Magazine, Publication submitted to BMC Bioinformatics}
 
-	\end{itemize}
+		    \resitem{Presented at several conferences including Supercomputing and Q-bio}
 
-\item \ressubheading{Velvetrope}{Python, C, CUDA}{A parallel statistical algorithm for finding homologous regions within sequences}{2009 - 2010}
+			\end{itemize}
 
-  \begin{itemize}
+		\item \ressubheading{BetaHelix}{Java}{Computes various statistics about a left or right handed beta helix}{2006 - 2007}
 
-		\resitem{Profiled in DEIXIS Magazine, Publication submitted to BMC Bioinformatics}
+		\begin{itemize}
 
-    \resitem{Presented at several conferences including Supercomputing and Q-bio}
+				\resitem{Published in Prion: Left handed $\beta$ helix models for mammalian prion fibrils.}
 
-	\end{itemize}
+			\end{itemize}
 
-\item \ressubheading{BetaHelix}{Java}{Computes various statistics about a left or right handed beta helix}{2006 - 2007}
 
-\begin{itemize}
+		\end{itemize}
 
-		\resitem{Published in Prion: Left handed $\beta$ helix models for mammalian prion fibrils.}
+		\resheading{Personal}
 
-	\end{itemize}
+		\begin{itemize}
 
+		\item {\bf Hobbies:} Poker, Golf, Racquet-based sports, Snowboarding, Video Games, Building things (physical and/or digital) and drinking good beer or scotch with new and old friends.
 
-\end{itemize}
+		\item {\bf Why Industry over Academia?} I love exploring new problems on the forefront of research, but academia moves too slowly and bureaucratically for me. I enjoy working in a fast-paced environment pushing measurable results to clients on a daily timescale, using the skills that I have honed throughout my academic career.
 
-\resheading{Personal}
+		\item {\bf My Ideal Position:} Working with a fun team solving interesting problems. I enjoy every part of development, from deep backend optimization to client-facing applications and interaction. I would love to make a difference wherever and however I am able while leveraging my machine learning, data mining and mathematical background.
 
-\begin{itemize}
-
-\item {\bf Hobbies:} Poker, Golf, Racquet-based sports, Snowboarding, Video Games, Building things (physical and/or digital) and drinking good beer or scotch with new and old friends.
-
-\item {\bf Why Industry over Academia?} I love exploring new problems on the forefront of research, but academia moves too slowly and bureaucratically for me. I enjoy working in a fast-paced environment pushing measurable results to clients on a daily timescale, using the skills that I have honed throughout my academic career.
-
-\item {\bf My Ideal Position:} Working with a fun team solving interesting problems. I enjoy every part of development, from deep backend optimization to client-facing applications and interaction. I would love to make a difference wherever and however I am able while leveraging my machine learning, data mining and mathematical background.
-
-\end{itemize}
+		\end{itemize}
 
 \end{document}
